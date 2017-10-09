@@ -7,18 +7,11 @@
 
 	<persistence-unit name="primary" transaction-type="JTA">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		<jta-data-source>java:jboss/JBossConfigDS</jta-data-source>
+		<jta-data-source>java:jboss/datasources/ExampleDS</jta-data-source>
 		<class>com.agilesolutions.inst.model.Member</class>
 		<properties>
-			<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect" />
-			<property name="hibernate.query.factory_class"
-				value="org.hibernate.hql.internal.classic.ClassicQueryTranslatorFactory" />
-			<property name="hibernate.transaction.manager_lookup_class"
-				value="org.hibernate.transaction.JBossTransactionManagerLookup" />
-			<property name="hibernate.id.new_generator_mappings" value="false" />
-			<property name="hibernate.show-sql" value="true" />
-			<property name="hibernate.format_sql" value="true" />
-			<property name="show_sql" value="true" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect" />
+			<property name="hibernate.hbm2ddl.auto" value="create-drop" />
 		</properties>
 	</persistence-unit>
 
