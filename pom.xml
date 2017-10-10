@@ -150,5 +150,13 @@
 		</profile>
 	</profiles>
 
+	<repositories>
+		<repository>
+			<id>BJBmirror</id>
+			<name>BJB Internal Mirror.</name>
+			<url>http://nexus.juliusbaer.com/content/groups/public</url>
+		</repository>
+	</repositories>
+
 
 </project>
