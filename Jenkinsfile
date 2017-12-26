@@ -12,8 +12,10 @@ pipeline {
 		}
 		stage('Package') {
 			steps {
-				docker.withServer('tcp://localhost:2376') {
-				   def customImage = docker.build("my-image:${env.BUILD_ID}")
+				script {
+					docker.withServer('tcp://localhost:2376') {
+				   	def customImage = docker.build("my-image:${env.BUILD_ID}")
+					}
 				}
 			}
 		}
