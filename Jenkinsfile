@@ -6,7 +6,6 @@ pipeline {
         stage('Build') {
           steps {
             bat 'mvn clean install'
-            input(message: 'confirm', id: 'confirm', ok: 'natuurlijk', submitter: 'asfd', submitterParameter: 'afsaf')
           }
         }
         stage('echo') {
