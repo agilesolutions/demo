@@ -12,6 +12,7 @@ pipeline {
 		}
 		stage('Package') {
 			steps {
+				bat 'docker rmi -f myimage:latest'
 				bat 'docker build -t my-image:latest .'
 			}
 		}
