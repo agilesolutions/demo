@@ -12,7 +12,7 @@ pipeline {
 		}
 		stage('Package') {
 			steps {
-				bat 'docker build -t "my-image:${env.BUILD_ID}" .'
+				bat 'docker build -t my-image:latest .'
 			}
 		}
 	}
