@@ -2,9 +2,18 @@ pipeline {
   agent any
   stages {
     stage('Build') {
-      steps {
-        bat 'mvn clean install'
-        echo 'hallo'
+      parallel {
+        stage('Build') {
+          steps {
+            bat 'mvn clean install'
+            input(message: 'confirm', id: 'confirm', ok: 'natuurlijk', submitter: 'asfd', submitterParameter: 'afsaf')
+          }
+        }
+        stage('echo') {
+          steps {
+            echo 'dad'
+          }
+        }
       }
     }
     stage('Package') {
