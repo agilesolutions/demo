@@ -10,6 +10,10 @@ pipeline {
 				bat 'mvn clean install'
 			}
 		}
-
+		stage('Package') {
+			steps {
+				bat 'docker build -t "my-image:${env.BUILD_ID}" .'
+			}
+		}
 	}
 }
