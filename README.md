@@ -1,6 +1,6 @@
 # Jenkins pipelines and Docker
 
-tutorial to run jenkins pipelines on blueocean in Docker container. Just to show how easy things are. Dear developers dont let yourself caught into the shit like S2I and proprietary stuff like openshift. You simple dont need it, you need
+Just one of these tutorials to run jenkins pipelines on blueocean in Docker container. Just to show how easy things can be. Dear developers dont let yourself caught into the proprietary scheisse like S2I and overhead like openshift. This will not improve you productivity and certainly not make your mood good. You simple dont need this stuff, however what your need... for all the developers who love the stuff produced by OS communities...
 
 * Jenkins Pipelines and Groovy
 * Jenkins [Docker agents](https://jenkins.io/doc/book/pipeline/docker/) 
