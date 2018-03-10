@@ -7,7 +7,7 @@ Just one of these tutorials to run jenkins pipelines on blueocean in Docker cont
 * Plain Docker and Docker compose 
 * Blue ocean, [read this great stuff](https://jenkins.io/doc/tutorials/create-a-pipeline-in-blue-ocean/)
 
-The everlasting discussion, do we need Docker container management and clustering solutions to do our development work, the answer is a definite NO... Most of you probably are fimiliair with XP and [YAGNI](https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it), get away from all the redundancy and do the following...
+The everlasting discussion, do we need Docker container management and clustering solutions to do our development work, the answer is a definite NO... Most of you are probably fimiliair with XP and [YAGNI](https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it), get away from all the redundancy and do the following...
 
 Just take a Linux VM, put docker on it, see that you get a company private central Docker registry like [NEXUS 3](http://books.sonatype.com/nexus-book/3.0/reference/docker.html) and run all your CI/CD builds with Jenkins Pipelines.
 And if, you want to deploy your containers to productive environments and you look for a solid solution for tracking your pipelines on JIRA tickets have a look at the beautiful JIRA integration library for Jenkins Pipelines, read [JIRA pipeline steps](https://jenkinsci.github.io/jira-steps-plugin/index.html). Its all free to get and backed up by a hudge community effort and experience.
