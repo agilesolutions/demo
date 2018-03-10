@@ -1,9 +1,8 @@
-JEE6 WEB application: Example Using Multiple Java EE 6 Technologies Deployed as a WAR
-=====================
-Technologies: JPA/Hibernate/EJB/CDI/JSF/JAX-RS.    
-Summary: Project generated from archetype see <https://github.com/jboss/jboss-javaee-specs/blob/master/jboss-javaee-web/pom.xml>   
-Target Product: EAP6+    
-
-What is it?   
------------   
-Simple application to be deployen on OCP OpenShift Container Platform for demonstration purposes, originally copied from RedHat EAP Kitchinsink quickstart app.
+#Jenkins pipelines and Docker
+tutorial to run jenkins pipelines on blueocean in Docker container.
+##Docker agents to run Maven (get rid of S2I shit)
+No need for OpenShift build configs and S2I builder images, all overhead, real answer comes from Jenkins Pipeline agent
+[Running Maven from Pipelines](https://jenkins.io/doc/book/pipeline/docker/)
+##Run Docker in Container
+Bind host Docker sockets into your jenkins blueocean container
+[Jenkins in Container](https://jenkins.io/doc/tutorials/create-a-pipeline-in-blue-ocean/)
