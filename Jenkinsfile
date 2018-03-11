@@ -17,7 +17,7 @@ pipeline {
       steps {
         script {
           def customImage = docker.build("demo:${env.BUILD_ID}")
-          customImage.run('-p 8180:8080')
+          customImage.run('--name demo -p 8180:8080')
           //customImage.inside {
           //   sh '/opt/jboss/wildfly/bin/standalone.sh'
           //}
