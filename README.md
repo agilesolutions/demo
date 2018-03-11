@@ -32,3 +32,5 @@ Go to PWD Docker Playground and play around with Jenkins on Docker from interact
 * docker ps -a
 * browse to http://localhost:8080 and wait until the Unlock Jenkins page appears.
 * get password from /jenkins/secrets/initialAdminPassword
+## and read this great post
+https://getintodevops.com/blog/building-your-first-docker-image-with-jenkins-2-guide-for-developers
