@@ -21,7 +21,7 @@ Bind host Docker sockets into your jenkins blueocean container.
 read [Jenkins in Container](https://jenkins.io/doc/tutorials/create-a-pipeline-in-blue-ocean/)
 
 ## Play with Docker
-[play with docker](https://labs.play-with-docker.com/)
+Go to PWD Docker Playground and play around with Jenkins on Docker from interactive [play with docker](https://labs.play-with-docker.com/)
 
 ## Run jenkins in container and bind host docker
 
