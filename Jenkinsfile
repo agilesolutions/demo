@@ -13,7 +13,7 @@ pipeline {
       steps {
         script {
           def customImage = docker.build("katacodarob/demo:${env.BUILD_ID}")
-          testImage.inside {
+          customImage.inside {
              sh '/opt/jboss/wildfly/bin/standalone.sh'
           }
         }
