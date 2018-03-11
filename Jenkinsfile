@@ -3,7 +3,11 @@ pipeline {
   stages {
     stage('Build') {
       agent {
-                docker { image 'maven:3-alpine' }
+          docker {
+              image 'maven:3-alpine'
+            // do some caching on maven here
+              args '-v $HOME/.m2:/root/.m2'
+          }
       }
       steps {
         sh 'mvn clean install'
