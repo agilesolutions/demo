@@ -12,11 +12,12 @@ pipeline {
     stage('dockerbuild') {
       steps {
         script {
-          def customImage = docker.build("katacodarob/demo:${env.BUILD_ID}")
+          def customImage = docker.build("demo:${env.BUILD_ID}")
           //customImage.inside {
           //   sh '/opt/jboss/wildfly/bin/standalone.sh'
           //}
-         customImage.withRun('-p 8180:8080')
+          customImage.withRun('-p 8180:8080') {
+            sh 'ls' 
         }        
       }
     }
