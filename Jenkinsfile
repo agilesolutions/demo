@@ -18,6 +18,7 @@ pipeline {
           //}
           customImage.withRun('-p 8180:8080') {
             sh 'ls' 
+          }
         }        
       }
     }
