@@ -15,7 +15,7 @@ pipeline {
     stage('dockerbuild') {
       steps {
         script {
-          sh 'docker build -t demo:latest .'
+          def customImage = docker.build("my-image:${env.BUILD_ID}")
         }
         
       }
