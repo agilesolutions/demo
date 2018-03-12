@@ -73,3 +73,4 @@ docker create --name=jenkins-data katacoda/jenkins-data
 * https://damnhandy.com/2016/03/06/creating-containerized-build-environments-with-the-jenkins-pipeline-plugin-and-docker-well-almost/
 ## share standard pipelines accross mutliple projects
 * [pipelines templates](https://jenkins.io/blog/2017/10/02/pipeline-templates-with-shared-libraries/)
+* [Docker Data Containers and Named Volumes](https://boxboat.com/2016/06/18/docker-data-containers-and-named-volumes/)
