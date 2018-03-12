@@ -35,3 +35,5 @@ Go to PWD Docker Playground and play around with Jenkins on Docker from interact
 ## some great reads
 * https://getintodevops.com/blog/building-your-first-docker-image-with-jenkins-2-guide-for-developers
 * https://damnhandy.com/2016/03/06/creating-containerized-build-environments-with-the-jenkins-pipeline-plugin-and-docker-well-almost/
+## share standard pipelines accross mutliple projects
+* [pipelines templates](https://jenkins.io/blog/2017/10/02/pipeline-templates-with-shared-libraries/)
