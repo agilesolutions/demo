@@ -60,7 +60,7 @@ docker create --name=jenkins-data katacoda/jenkins-data
           docker {
               image 'maven:3-alpine'
             // do some caching on maven here
-              args '--volumnes-from=jenkins-data-v $(which docker):/root/.m2'
+              args '--volumnes-from=jenkins-data'
           }
       }
       steps {
