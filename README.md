@@ -32,6 +32,42 @@ Go to PWD Docker Playground and play around with Jenkins on Docker from interact
 * docker ps -a
 * browse to http://localhost:8080 and wait until the Unlock Jenkins page appears.
 * get password from /jenkins/secrets/initialAdminPassword
+## Maven M2 cache and Docker data volume containers
+Docker volume containers is a elegant way of sharing the M2 maven cache between multiple containers in a host-independent way. 
+This is how you would like to run our Maven build from a Jenkins Pipeline with docker agent to keep your Maven cache on Jenkins
+```groovy
+    stage('Build') {
+      agent {
+          docker {
+              image 'maven:3-alpine'
+            // do some caching on maven here
+              args '-v $HOME/.m2:/root/.m2'
+          }
+      }
+      steps {
+        sh 'mvn clean install'
+      }
+    }
+```
+### this is how you should do this with data volumes
+First create your data volume container like this...
+```
+docker create --name=jenkins-data katacoda/jenkins-data
+```
+```groovy
+    stage('Build') {
+      agent {
+          docker {
+              image 'maven:3-alpine'
+            // do some caching on maven here
+              args '--volumnes-from=jenkins-data-v $(which docker):/root/.m2'
+          }
+      }
+      steps {
+        sh 'mvn clean install'
+      }
+    }
+```
 ## some great reads
 * https://getintodevops.com/blog/building-your-first-docker-image-with-jenkins-2-guide-for-developers
 * https://damnhandy.com/2016/03/06/creating-containerized-build-environments-with-the-jenkins-pipeline-plugin-and-docker-well-almost/
