@@ -1,5 +1,8 @@
 pipeline {
   agent none
+  environment {   
+    DOCKER_IMAGE = null  
+  }
   stages {
     stage('Build') {
       agent {
@@ -13,19 +16,21 @@ pipeline {
         sh 'mvn clean install'
       }
     }
-    stage('dockerbuild') {
-      steps {
-        script {
-          def customImage = docker.build("demo:${env.BUILD_ID}")
-          customImage.run('--name demo -p 8180:8080')
-          //customImage.inside {
-          //   sh '/opt/jboss/wildfly/bin/standalone.sh'
-          //}
-          //customImage.withRun('-p 8180:8080') {
-          //  sh 'ls' 
-          //}
-        }        
-      }
+    stage('dockerbuild') {      
+      steps {        
+        script {         
+          DOCKER_IMAGE = docker.build("demo:${env.BUILD_ID}")        
+        }              
+      }    
+    }    
+    stage('dockerrun') 
+    {      
+      steps 
+      {        
+        script {          
+          DOCKER_IMAGE.run('--name demo -p 8180:8080')        
+        }             
+      }    
     }
   }
 }
