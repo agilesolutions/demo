@@ -20,16 +20,14 @@ pipeline {
       steps {
         script {
           DOCKER_IMAGE = docker.build("demo:${env.BUILD_ID}")
-        }   
+        }
       }
     }
-    stage('dockerrun')
-    {
-      steps
-      {
-        script {   
-          DOCKER_IMAGE.run('--name demo -p 8180:8080') 
-        }   
+    stage('dockerrun') {
+      steps {
+        script {
+          DOCKER_IMAGE.run('--name demo -p 8180:8080')
+        }
       }
     }
   }
