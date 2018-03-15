@@ -16,7 +16,7 @@ pipeline {
         sh 'mvn clean install'
       }
     }
-    stage('dockerbuild') {
+    /*stage('dockerbuild') {
       steps {
         script {
           DOCKER_IMAGE = docker.build("demo:${env.BUILD_ID}")
@@ -29,6 +29,6 @@ pipeline {
           DOCKER_IMAGE.run('--name demo -p 8180:8080')
         }
       }
-    }
+    }*/
   }
 }
