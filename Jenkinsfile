@@ -1,7 +1,7 @@
 pipeline {
   agent none
-  environment {   
-    DOCKER_IMAGE = null  
+  environment {
+    DOCKER_IMAGE = null
   }
   stages {
     stage('Build') {
