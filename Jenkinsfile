@@ -23,6 +23,15 @@ pipeline {
         }
       }
     }
+    stage('dockertest') {
+      steps {
+        script {
+          DOCKER_IMAGE.inside {
+            sh 'curl --silent --insecure http://localhost:8080/demo/rest/members'
+            }
+        }
+      }
+    }
     stage('dockerrun') {
       steps {
         script {
