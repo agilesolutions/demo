@@ -1,4 +1,4 @@
-FROM jboss/wildfly:latest
+FROM katacodarob/wildfly:latest
 COPY target/demo.war /opt/jboss/wildfly/standalone/deployments
 RUN curl --silent --insecure -o /opt/jboss/wildfly/bin/initial.cli http://localhost:8080/jdo/rest/profile/cli?name=atm_batch
 EXPOSE 8080
