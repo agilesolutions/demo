@@ -32,6 +32,13 @@ Go to PWD Docker Playground and play around with Jenkins on Docker from interact
 * docker ps -a
 * browse to http://localhost:8080 and wait until the Unlock Jenkins page appears.
 * get password from /jenkins/secrets/initialAdminPassword
+
+## assemble test environment
+* docker run -d --name jdo -p 8080:8080 katacodarob/jdo
+* docker run -d --name jenkins -u root -p 8081:8080 -v /jenkins:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock jenkinsci/blueocean
+* docker network create demo
+* docker network connect --alias jdo demo jdo
+* docker network connect --alias jenkins demo jenkins
 ## Maven M2 cache and Docker data volume containers
 Docker volume containers is a elegant way of sharing the M2 maven cache between multiple containers in a host-independent way. 
 This is how you would like to run our Maven build from a Jenkins Pipeline with docker agent to keep your Maven cache on Jenkins
