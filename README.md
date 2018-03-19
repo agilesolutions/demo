@@ -26,7 +26,7 @@ Go to PWD Docker Playground and play around with Jenkins on Docker from interact
 ## Run jenkins in container and bind host docker
 
 * create directory /jenkins
-* docker run -d --name jenkins -u root -p 8080:8080 -v /jenkins:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock jenkinsci/blueocean
+* docker run -d --name jenkins --user root -p 8080:8080 -v /jenkins:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock jenkinsci/blueocean
 * docker logs -f jenkins
 * docker exec -ti jenkins bash
 * docker ps -a
@@ -35,7 +35,7 @@ Go to PWD Docker Playground and play around with Jenkins on Docker from interact
 
 ## assemble test environment
 * docker run -d --name jdo -p 8080:8080 katacodarob/jdo
-* docker run -d --name jenkins -u root -p 8081:8080 -v /jenkins:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock jenkinsci/blueocean
+* docker run -d --name jenkins --user root -p 8081:8080 -v /jenkins:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock jenkinsci/blueocean
 * docker network create demo
 * docker network connect --alias jdo demo jdo
 * docker network connect --alias jenkins demo jenkins
