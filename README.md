@@ -1,4 +1,4 @@
-# The beauty of Jenkins Pipelines and Docker, simply all you need
+# The Elegance of Jenkins Pipelines with Docker, simply all you need to do your DevOps
 
 Just one of these tutorials to run jenkins pipelines on blueocean in Docker containers. Just to show how easy things can be. No need for proprietary solutions like OpenShift together with S2I.
 
