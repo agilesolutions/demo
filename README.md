@@ -33,6 +33,10 @@ Go to PWD Docker Playground and play around with Jenkins on Docker from interact
 * browse to http://localhost:8080 and wait until the Unlock Jenkins page appears.
 * get password from /jenkins/secrets/initialAdminPassword
 
+## proposal DevOps with Jenkins Pipelines & Docker
+Picture explaines to build, test, package on one Linux box and pull and run docker containers on a Production Linux box from one pipeline.
+![DevOps with Jenkins and Docker](jenkins.jpg)
+
 ## assemble test environment
 * docker run -d --name jdo -p 8080:8080 katacodarob/jdo
 * docker run -d --name jenkins --user root -p 8081:8080 -v /jenkins:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock jenkinsci/blueocean

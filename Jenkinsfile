@@ -33,10 +33,21 @@ pipeline {
         }
       }
     }
+    stage('dockerpush') {
+      steps {
+        script {
+          	docker.withRegistry('https://registry.example.com') {
+          		DOCKER_IMAGE.push()
+          	}
+        }
+      }
+    }
     stage('dockerrun') {
       steps {
         script {
-          DOCKER_IMAGE.run('--name demo -p 8180:8080')
+          	docker.withServer('tcp://swarm.example.com:2376','server-certs') {
+	            DOCKER_IMAGE.run('--name demo -p 8180:8080')
+          	]
         }
       }
     }
