@@ -23,6 +23,7 @@ Picture explains how to build, test, package on one Linux box running Jenkins as
 3. Jenkins test pipeline stage runs some tests on the image you just produced with the docker buildfile on your git repository
 4. Docker push your image on the Docker Hub
 5. Docker remote run and pull the image from the central Docker Hub registry
+6. Read this [Using Docker with Pipelines](https://jenkins.io/doc/book/pipeline/docker/)
 
 ## Run Docker in Container
 
