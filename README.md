@@ -16,7 +16,7 @@ And if, you want to deploy your containers to productive environments and you lo
 No need for OpenShift build configs and S2I builder images, all overhead, simply rely on Jenkins Pipeline agents and read [Running Maven from Pipelines](https://jenkins.io/doc/book/pipeline/docker/)
 
 ## proposal DevOps with Jenkins Pipelines & Docker
-Picture explains how to build, test, package on one Linux box running Jenkins as a container and pull and run docker containers on a Production Linux box from one pipeline.
+Picture explains how to build, test, package on one Linux box running Jenkins as a container and pull and run docker containers on a Production Linux box from one pipeline. You can play through this whole scenario on [Play with Docker](https://labs.play-with-docker.com/) if you wish, believe me it works.
 ![DevOps with Jenkins and Docker](jenkins.jpg)
 1. Commit on the master branch of your repo triggers remote Jenkins Pipeline through webhooks trigger.
 2. Jenkins pipeline clones git repo, maven builds your application with Docker Agent running maven 3 alpine image (service container)
