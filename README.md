@@ -15,6 +15,15 @@ And if, you want to deploy your containers to productive environments and you lo
 
 No need for OpenShift build configs and S2I builder images, all overhead, simply rely on Jenkins Pipeline agents and read [Running Maven from Pipelines](https://jenkins.io/doc/book/pipeline/docker/)
 
+## proposal DevOps with Jenkins Pipelines & Docker
+Picture explains how to build, test, package on one Linux box running Jenkins as a container and pull and run docker containers on a Production Linux box from one pipeline.
+![DevOps with Jenkins and Docker](jenkins.jpg)
+1. Commit on the master branch of your repo triggers remote Jenkins Pipeline through webhooks trigger.
+2. Jenkins pipeline clones git repo, maven builds your application with Docker Agent running maven 3 alpine image (service container)
+3. Jenkins test pipeline stage runs some tests on the image you just produced with the docker buildfile on your git repository
+4. Docker push your image on the Docker Hub
+5. Docker remote run and pull the image from the central Docker Hub registry
+
 ## Run Docker in Container
 
 Bind host Docker sockets into your jenkins blueocean container.
@@ -33,9 +42,6 @@ Go to PWD Docker Playground and play around with Jenkins on Docker from interact
 * browse to http://localhost:8080 and wait until the Unlock Jenkins page appears.
 * get password from /jenkins/secrets/initialAdminPassword
 
-## proposal DevOps with Jenkins Pipelines & Docker
-Picture explaines to build, test, package on one Linux box and pull and run docker containers on a Production Linux box from one pipeline.
-![DevOps with Jenkins and Docker](jenkins.jpg)
 
 ## assemble test environment
 * docker run -d --name jdo -p 8080:8080 katacodarob/jdo
