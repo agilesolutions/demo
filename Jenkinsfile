@@ -28,7 +28,7 @@ pipeline {
       steps {
         script {
           DOCKER_IMAGE.inside {
-          	// do a Docker jbosscli test to see if container is up and running to complete this test
+          	// do a Docker jbosscli test to see if JBoss is up and running to complete this test
             //sh 'curl --insecure -o hello.txt http://localhost:8080/demo/rest/members/info'
             //sh 'cat hello.txt'
             sh 'echo tested'
