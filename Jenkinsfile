@@ -47,7 +47,7 @@ pipeline {
     stage('dockerrun') {
       steps {
         script {
-          	docker.withServer('tcp://192.168.0.57:2375') {
+          	docker.withServer('tcp://192.168.0.57:2375').withRegistry('', 'docker-hub-credentials') {
 	            DOCKER_IMAGE.run('--name demo -p 8180:8080')
           	}
         }
