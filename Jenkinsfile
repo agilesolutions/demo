@@ -37,10 +37,10 @@ pipeline {
     stage('dockerpush') {
       steps {
         script {
-            sh 'pushed'
-//          	docker.withRegistry('', 'docker-hub-credentials') {
+          	docker.withRegistry('', 'docker-hub-credentials') {
 //          		DOCKER_IMAGE.push('latest')
-//          	}
+				sh 'image pushed'
+          	}
         }
       }
     }
