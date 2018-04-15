@@ -24,6 +24,7 @@ Picture explains how to build, test, package on one Linux box running Jenkins as
 4. Docker push your image on the NEUXS 3 Docker registry, credentials ID is simply a Jenkins Username-Password credential object for logging on to the NEXUS repository.
 5. Docker remote run and pull the image from the central Docker Hub registry
 6. Read this [Using Docker with Pipelines](https://jenkins.io/doc/book/pipeline/docker/)
+7. Then read this [Building docker images with jenkins pipelines](https://getintodevops.com/blog/building-your-first-docker-image-with-jenkins-2-guide-for-developers)
 
 ## Run Docker in Container
 
