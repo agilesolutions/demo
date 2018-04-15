@@ -21,7 +21,7 @@ Picture explains how to build, test, package on one Linux box running Jenkins as
 1. Commit on the master branch of your repo triggers remote Jenkins Pipeline through webhooks trigger.
 2. Jenkins pipeline clones git repo, maven builds your application with Docker Agent running maven 3 alpine image (service container)
 3. Jenkins test pipeline stage runs some tests on the image you just produced with the docker buildfile on your git repository
-4. Docker push your image on the Docker Hub
+4. Docker push your image on the NEUXS 3 Docker registry, credentials ID is simply a Jenkins Username-Password credential object for logging on to the NEXUS repository.
 5. Docker remote run and pull the image from the central Docker Hub registry
 6. Read this [Using Docker with Pipelines](https://jenkins.io/doc/book/pipeline/docker/)
 
