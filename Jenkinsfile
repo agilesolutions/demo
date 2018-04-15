@@ -37,16 +37,17 @@ pipeline {
     stage('dockerpush') {
       steps {
         script {
-          	docker.withRegistry('', 'docker-hub-credentials') {
-          		DOCKER_IMAGE.push('latest')
-          	}
+            sh 'pushed'
+//          	docker.withRegistry('', 'docker-hub-credentials') {
+//          		DOCKER_IMAGE.push('latest')
+//          	}
         }
       }
     }
     stage('dockerrun') {
       steps {
         script {
-          	docker.withServer('tcp://swarm.example.com:2376','server-certs') {
+          	docker.withServer('tcp://192.168.0.57:2376') {
 	            DOCKER_IMAGE.run('--name demo -p 8180:8080')
           	}
         }
