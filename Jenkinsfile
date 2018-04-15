@@ -19,7 +19,7 @@ pipeline {
     stage('dockerbuild') {
       steps {
         script {
-          DOCKER_IMAGE = docker.build("demo:${env.BUILD_ID}")
+          DOCKER_IMAGE = docker.build("katacodarob/demo:${env.BUILD_ID}")
         }
       }
     }
@@ -37,7 +37,7 @@ pipeline {
     stage('dockerpush') {
       steps {
         script {
-          	docker.withRegistry('https://hub.docker.com/katacodarob','dockerhub') {
+          	docker.withRegistry('https://registry.hub.docker.com'','dockerhub') {
           		DOCKER_IMAGE.push()
           	}
         }
