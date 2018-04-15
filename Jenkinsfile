@@ -37,7 +37,7 @@ pipeline {
     stage('dockerpush') {
       steps {
         script {
-          	docker.withRegistry('https://hub.docker.com','dockerhub') {
+          	docker.withRegistry('https://hub.docker.com/katacodarob','dockerhub') {
           		DOCKER_IMAGE.push()
           	}
         }
