@@ -57,6 +57,14 @@ public class MemberResourceRESTService {
 	MemberRegistration registration;
 
 	@GET
+	@Path("info")
+	@Produces(MediaType.TEXT_PLAIN)
+	public String getInfo() {
+
+		return "I am here";
+	}
+
+	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Member> listAllMembers() {
 
