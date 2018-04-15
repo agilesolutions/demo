@@ -19,7 +19,8 @@ pipeline {
     stage('dockerbuild') {
       steps {
         script {
-          DOCKER_IMAGE = docker.build("katacodarob/demo:${env.BUILD_ID}")
+//          DOCKER_IMAGE = docker.build("katacodarob/demo:${env.BUILD_ID}")
+          DOCKER_IMAGE = docker.build("katacodarob/demo:latest")
         }
       }
     }
