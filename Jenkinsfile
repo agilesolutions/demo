@@ -34,16 +34,15 @@ pipeline {
         }
       }
     }
-    stage('dockerpush') {
-      steps {
-        script {
-          	docker.withRegistry('', 'docker-hub-credentials') {
+//    stage('dockerpush') {
+//      steps {
+//        script {
+//          	docker.withRegistry('', 'docker-hub-credentials') {
 //          		DOCKER_IMAGE.push('latest')
-				sh 'image pushed'
-          	}
-        }
-      }
-    }
+//          	}
+//        }
+//      }
+//    }
     stage('dockerrun') {
       steps {
         script {
