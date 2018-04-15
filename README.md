@@ -1,22 +1,13 @@
 # The Elegance of Jenkins Pipelines with Docker, simply all you need to do your DevOps
 
-Just one of these tutorials to run jenkins pipelines on blueocean in Docker containers. Just to show how easy things can be. No need for proprietary solutions like OpenShift together with S2I.
-
-* Jenkins Pipelines and Groovy
-* Jenkins [Docker agents](https://jenkins.io/doc/book/pipeline/docker/) 
-* Plain Docker and Docker compose 
-* Blue ocean, [read this great stuff](https://jenkins.io/doc/tutorials/create-a-pipeline-in-blue-ocean/)
-
-The everlasting discussion, do we need Docker container management and clustering solutions to do our development work, the answer is a definite NO... Most of you are probably fimiliair with XP and [YAGNI](https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it), get away from all the redundancy and do the following...
+Just one of these tutorials to run jenkins pipelines on Docker, building Docker Images and running Containers. Just to show how easy things can be. No need for proprietary solutions like OpenShift with S2I.
 
 Just take a Linux VM, put docker on it, see that you get a company private central Docker registry like [NEXUS 3](http://books.sonatype.com/nexus-book/3.0/reference/docker.html) and run all your CI/CD builds with Jenkins Pipelines.
-And if, you want to deploy your containers to productive environments and you look for a solid solution for tracking your pipelines on JIRA tickets have a look at the beautiful JIRA integration library for Jenkins Pipelines, read [JIRA pipeline steps](https://jenkinsci.github.io/jira-steps-plugin/index.html). Its all free to get and backed up by a hudge community effort and experience.
 
-
-No need for OpenShift build configs and S2I builder images, all overhead, simply rely on Jenkins Pipeline agents and read [Running Maven from Pipelines](https://jenkins.io/doc/book/pipeline/docker/)
+No need for OpenShift build configs and S2I builder images, all overhead. Use Jenkins Docker agents instead and read [Running Maven from Pipelines](https://jenkins.io/doc/book/pipeline/docker/)
 
 ## proposal DevOps with Jenkins Pipelines & Docker
-Picture explains how to build, test, package on one Linux box running Jenkins as a container and pull and run docker containers on a Production Linux box from one pipeline. You can play through this whole scenario on [Play with Docker](https://labs.play-with-docker.com/) if you wish, believe me it works.
+Picture explains how to build, test, package on one Linux box running Jenkins as a container and pull and run docker containers on a Production Linux box from one pipeline. You can play through this whole scenario on [Play with Docker](https://labs.play-with-docker.com/) if you wish, believe me, it works.
 ![DevOps with Jenkins and Docker](jenkins.jpg)
 1. Commit on the master branch of your repo triggers remote Jenkins Pipeline through webhooks trigger.
 2. Jenkins pipeline clones git repo, maven builds your application with Docker Agent running maven 3 alpine image (service container)
