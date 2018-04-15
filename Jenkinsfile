@@ -28,9 +28,9 @@ pipeline {
       steps {
         script {
           DOCKER_IMAGE.inside {
-            //sh 'curl --insecure -o hello.txt http://localhost:8080/demo/rest/members/info'
+            sh 'curl --insecure -o hello.txt http://localhost:8080/demo/rest/members/info'
             //sh 'cat hello.txt'
-            sh 'echo tested'
+            //sh 'echo tested'
             }
         }
       }
