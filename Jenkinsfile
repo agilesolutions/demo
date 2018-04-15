@@ -47,7 +47,7 @@ pipeline {
         script {
           	docker.withServer('tcp://swarm.example.com:2376','server-certs') {
 	            DOCKER_IMAGE.run('--name demo -p 8180:8080')
-          	]
+          	}
         }
       }
     }
