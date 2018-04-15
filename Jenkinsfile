@@ -46,7 +46,7 @@ pipeline {
     stage('dockerrun') {
       steps {
         script {
-          	docker.withServer('tcp://192.168.0.57:2376') {
+          	docker.withServer('tcp://192.168.0.57:2375') {
 	            DOCKER_IMAGE.run('--name demo -p 8180:8080')
           	}
         }
