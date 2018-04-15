@@ -37,7 +37,7 @@ pipeline {
     stage('dockerpush') {
       steps {
         script {
-          	docker.withRegistry('', 'docker-hub-credentials') {
+          	docker.withRegistry('https://index.docker.io/v1/', 'docker-hub-credentials') {
           		DOCKER_IMAGE.push()
           	}
         }
